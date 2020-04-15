@@ -49,7 +49,7 @@ export default function Header() {
     >
       <MenuItem onClick={handleMobileMenuOpen}>
         <IconButton aria-label="show 3 new mails" color="inherit">
-          <Badge badgeContent={3} color="secondary">
+          <Badge badgeContent={4} color="secondary">
             <MailIcon />
           </Badge>
         </IconButton>
@@ -57,7 +57,7 @@ export default function Header() {
       </MenuItem>
       <MenuItem onClick={handleMobileMenuOpen}>
         <IconButton aria-label="show 8 new notifications" color="inherit">
-          <Badge badgeContent={8} color="secondary">
+          <Badge badgeContent={11} color="secondary">
             <NotificationsIcon />
           </Badge>
         </IconButton>
@@ -76,6 +76,18 @@ export default function Header() {
           <Button id="money" color="inherit">
             Wallet
           </Button>
+          <div className={classes.sectionDesktop}>
+            <IconButton aria-label="show 3 new mails" color="inherit">
+              <Badge badgeContent={3} color="secondary">
+                <MailIcon />
+              </Badge>
+            </IconButton>
+            <IconButton aria-label="show 8 new notifications" color="inherit">
+              <Badge badgeContent={8} color="secondary">
+                <NotificationsIcon />
+              </Badge>
+            </IconButton>
+          </div>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}

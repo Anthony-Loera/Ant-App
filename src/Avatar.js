@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
-import { red, blue, deepPurple } from "@material-ui/core/colors";
+import { red } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,14 +14,6 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.getContrastText(red[500]),
     backgroundColor: red[500],
   },
-  blue: {
-    color: theme.palette.getContrastText(blue[500]),
-    backgroundColor: blue[500],
-  },
-  purple: {
-    color: theme.palette.getContrastText(deepPurple[500]),
-    backgroundColor: deepPurple[500],
-  },
 }));
 
 export default function Avatars() {
@@ -30,8 +22,6 @@ export default function Avatars() {
   return (
     <div className={classes.root}>
       <Avatar className={classes.red}>AL</Avatar>
-      <Avatar className={classes.blue}>JP</Avatar>
-      <Avatar className={classes.purple}>PW</Avatar>
     </div>
   );
 }
