@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from "@material-ui/core";
+import React from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import "./App.css";
+import SideDrawer from "./Drawer";
+import Header from "./Header";
+import Menu from "./Menu";
+import Search from "./Search";
+import Stock from "./Stock";
+import theme from "./theme";
 
-function App() {
+function View() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <Stock />
+        <Menu />
+      </div>
+    </ThemeProvider>
   );
 }
 
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Header />
+        <SideDrawer />
+        <Search />
+        <Route path="/stock/:symbol" exact={true}>
+          <View />
+        </Route>
+      </BrowserRouter>
+    </ThemeProvider>
+  );
+}
 export default App;
